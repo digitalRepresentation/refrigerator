@@ -11,7 +11,16 @@
         <link href=
         
     </head>
-        <header></header>
+        <header>
+            <div id = "divMenu">
+                <ul>
+                <li><a class="active" href="#home">トップページへ</a></li>
+                <li><a href="#news">冷蔵庫</a></li>
+                <li><a href="#contact"></a></li>
+                <li><a href="#about">問い合わせ</a></li>
+                </ul>
+            </div>
+        </header>
         <article></article>
         <footer></footer>
     </body>
