@@ -13,14 +13,33 @@
         
     </head>
         <header>
-            <div id = "divMenu">
-                <ul>
-                <li><a class="active" href="#home">トップページへ</a></li>
-                <li><a href="#news">冷蔵庫</a></li>
-                <li><a href="#contact"></a></li>
-                <li><a href="#about">問い合わせ</a></li>
-                </ul>
-            </div>
+            <section class="section section--menu" id="Prospero">
+
+            <h2 class="section__title">Prospero</h2>
+
+                <nav class="menu menu--prospero">
+
+                    <ul class="menu__list">
+                        <li class="menu__item menu__item--current">
+                            <a class="menu__link">Home</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link">Who we are</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link">What we offer</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link">Our news</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link">Contact us</a>
+                        </li>
+                    </ul>
+                    
+                </nav>
+
+            </section>
         </header>
         <article></article>
         <footer></footer>
