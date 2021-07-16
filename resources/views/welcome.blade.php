@@ -9,41 +9,18 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <!-- cssReset -->
-        <link rel="stylesheet" href="{{asset('css/common/reset.css')}}" />
-        <!-- <link rel="stylesheet" type="text/css" href="../css/common/reset.css"> -->
-        <!-- cssReset -->
+        < <link rel="stylesheet" href="{{asset('css/common/reset.css')}}" />
+        <!-- cssMenu -->
         <link rel="stylesheet" href="{{asset('css/common/menuTop.css')}}" />
-        <!-- <link rel="stylesheet" type="text/css" href="../css/common/menuTop.css"> -->
         
     </head>
         <header>
-            <section class="section section--menu" id="Prospero">
-
-            <h2 class="section__title">Prospero</h2>
-
-                <nav class="menu menu--prospero">
-
-                    <ul class="menu__list">
-                        <li class="menu__item menu__item--current">
-                            <a class="menu__link">Home</a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="menu__link">Who we are</a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="menu__link">What we offer</a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="menu__link">Our news</a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="menu__link">Contact us</a>
-                        </li>
-                    </ul>
-                    
-                </nav>
-
-            </section>
+            <div class="topnav">
+                <a class="active" href="#home">Home</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+            </div>
         </header>
         <article></article>
         <footer></footer>
