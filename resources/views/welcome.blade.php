@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="{{asset('css/common/reset.css')}}" />
         <!-- cssMenu -->
         <link rel="stylesheet" href="{{asset('css/common/menuTop.css')}}" />
-        
     </head>
         <header>
             <div class="topnav">
@@ -21,8 +20,17 @@
                 <a href="#contact">Contact</a>
                 <a href="#about">About</a>
             </div>
+            
         </header>
         <article></article>
         <footer></footer>
     </body>
 </html>
+
+@extends('common.topmenu')
+
+@section('sidebar')
+    @parent
+
+    <p>This is appended to the master sidebar.</p>
+@endsection
