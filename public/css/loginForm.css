@@ -1,0 +1,13 @@
+.loginForm {
+    margin:80px;
+}
+
+.loginForm .panel-success .panel-title {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+.loginForm .panel-success .panel-title .form-group {
+    width:400px;
+}
