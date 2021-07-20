@@ -4,6 +4,11 @@
     <title>冷蔵庫管理システム</title>
 @endsection
 
+@section('style')
+    <!-- topPageCss -->
+    <link rel="stylesheet" href="{{asset('css/topPage.css')}}" />
+@endsection
+
 @section('header')
 <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
