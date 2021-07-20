@@ -5,5 +5,18 @@
 @endsection
 
 @section('content')
-    <div>login</div>
+<form>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="ID">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="パスワード">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> 入力情報を記憶します。
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">ログイン</button>
+</form>
 @endsection
