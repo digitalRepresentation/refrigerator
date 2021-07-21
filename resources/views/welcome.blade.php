@@ -7,6 +7,12 @@
 @section('style')
     <!-- topPageCss -->
     <link rel="stylesheet" href="{{asset('css/topPage.css')}}" />
+
+    <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
+@endsection
+
+@section('script')
+    <script src="{{ asset('js/topPage.js') }}"></script>
 @endsection
 
 @section('header')
@@ -58,5 +64,13 @@
       </div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span> 
+        <span class="sr-only">Previous</span> </a> 
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> 
+        <span class="carousel-control-next-icon" aria-hidden="true"></span> 
+        <span class="sr-only">Next</span> 
+    </a> 
+</div>
+<!--slide end--> 
 @endsection
