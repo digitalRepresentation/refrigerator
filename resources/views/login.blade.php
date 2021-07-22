@@ -32,5 +32,5 @@
             </div>
         </div>
     </form>
-    <a href=""/signup"">Sign Up</a>
+    <a href="/signup">Sign Up</a>
 @endsection
