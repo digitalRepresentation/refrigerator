@@ -28,7 +28,9 @@
                     </label>
                 </div>
                 <button type="submit" class="btn btn-success">ログイン</button>
+                <hr>
             </div>
         </div>
     </form>
+    <a href=""/signup"">Sign Up</a>
 @endsection
