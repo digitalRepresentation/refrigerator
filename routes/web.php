@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignUpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,9 @@ Route::get('/', function () {
 
 //ログイン画面
 Route::get('/login', [LoginController::class, 'index']);
+
+//SignUp画面
+Route::get('/signup', [SignUpController::class, 'index']);
 
 //Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
