@@ -13,7 +13,17 @@ class Member extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('member', function (Blueprint $table) {
+            $table->id();
+            $table->string('MEMBER_NAME')->unique();
+            $table->string('MEMBER_PASSWORD');
+            $table->string('MEMBER_ADDRESS');
+            $table->string('MEMBER_SEX');
+            $table->string('MEMBER_PHONE');
+            //$table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
+        });
     }
 
     /**
