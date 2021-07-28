@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-<form>
+<form method="POST" action="{{ route('signup') }}">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
