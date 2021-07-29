@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ config('app.name', 'Laravel') }}
     @yield('head')
         <!-- cssReset -->
         <link rel="stylesheet" href="{{asset('css/common/reset.css')}}" />
@@ -16,6 +17,7 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         @yield('script')
+        
 </head>
 <body>
     <header>
