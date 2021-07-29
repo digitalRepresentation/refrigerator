@@ -9,12 +9,12 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+
 
 class SignUpController extends Controller
 {
-    public function index() {
-        return view('signup');
-    }
+    
 
     use RegistersUsers;
 
@@ -30,10 +30,24 @@ class SignUpController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
+
+    public function index() {
+        
+        return view('signup');
     }
+
+    public function signup() {
+        echo "test";
+        exit;
+        $users = DB::table('users')->count();
+        var_dump($users);
+        exit;
+    }
+
+    // public function __construct()
+    // {
+    //     $this->middlewre('guest');
+    // }
 
     /**
      * Get a validator for an incoming registration request.
