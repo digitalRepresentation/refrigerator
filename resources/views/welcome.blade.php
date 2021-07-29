@@ -1,9 +1,5 @@
 @extends('common.topmenu')
 
-@section('head')
-    <title>冷蔵庫管理システム</title>
-@endsection
-
 @section('style')
     <!-- topPageCss -->
     <link rel="stylesheet" href="{{asset('css/topPage.css')}}" />
