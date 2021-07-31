@@ -37,9 +37,8 @@ class SignUpController extends Controller
     }
 
     public function signup() {
-        echo "test";
-        exit;
-        $users = DB::table('users')->count();
+        $users = DB::statement('select * from users');
+        //$users = DB::table('users')->count();
         var_dump($users);
         exit;
     }
