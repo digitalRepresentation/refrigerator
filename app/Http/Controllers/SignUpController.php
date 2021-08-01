@@ -32,19 +32,38 @@ class SignUpController extends Controller
      */
 
     public function index() {
-        
         return view('signup');
     }
 
+    /**
+     * SignUpの引数を取得するメソッド
+     *
+     * @var Request $request
+     */
     public function signup(Request $request) {
-        $users = DB::statement('select * from users');
+        //signUp 
         $name = $request->input('name');
         $email = $request->input('email');
         $password = $request->input('password');
         $address = $request->input('address');
-        //$users = DB::table('users')->count();
-        var_dump($users);
-        exit;
+        $signupData = array(
+            "name" => $name,
+            "email" => $email,
+            "password" => $password,
+            "address" => $address,
+        );
+        $this->signupDataInsert($signupData);
+    }
+
+    /**
+     * data insert処理
+     *
+     * @var array $request
+     */
+    public function signupDataInsert(array $signupData) {
+        
+        
+        return;
     }
 
     // public function __construct()
