@@ -36,8 +36,12 @@ class SignUpController extends Controller
         return view('signup');
     }
 
-    public function signup() {
+    public function signup(Request $request) {
         $users = DB::statement('select * from users');
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $address = $request->input('address');
         //$users = DB::table('users')->count();
         var_dump($users);
         exit;
