@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use App\Models\Member;
 
 
 class SignUpController extends Controller
@@ -40,30 +41,40 @@ class SignUpController extends Controller
      *
      * @var Request $request
      */
-    public function signup(Request $request) {
-        //signUp 
+    public function signupCreate(Request $request) {
+        $member = new Member;
+
         $name = $request->input('name');
         $email = $request->input('email');
         $password = $request->input('password');
         $address = $request->input('address');
+        
+        
         $signupData = array(
-            "name" => $name,
-            "email" => $email,
-            "password" => $password,
-            "address" => $address,
-        );
+             "name" => $name,
+             "email" => $email,
+             "password" => $password,
+             "address" => $address,
+         );
+         //Member::insert($signupData);
+        
         $this->signupDataInsert($signupData);
     }
 
     /**
      * data insert処理
      *
-     * @var array $request
+     * @var array $signupData
      */
     public function signupDataInsert(array $signupData) {
+
+        //memberテーブル作成
+         DB::table('member')->insert([
+             ['MEMBER_NAME' => $signupData["name"], 'MEMBER_PASSWORD' => $signupData["password"], 'MEMBER_ADDRESS' => $signupData["address"], 'MEMBER_SEX' => 0, 'MEMBER_PHONE' => '0', 'MEMBER_EMAIL' => $signupData["email"]]
+         ]);
         
-        
-        return;
+
+        return view('welcome');
     }
 
     // public function __construct()
@@ -94,6 +105,8 @@ class SignUpController extends Controller
      */
     protected function create(array $data)
     {
+
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
