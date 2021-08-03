@@ -67,13 +67,15 @@ class SignUpController extends Controller
      * @var array $signupData
      */
     public function signupDataInsert(array $signupData) {
-
+        try {
         //memberテーブル作成
-         DB::table('member')->insert([
-             ['MEMBER_NAME' => $signupData["name"], 'MEMBER_PASSWORD' => $signupData["password"], 'MEMBER_ADDRESS' => $signupData["address"], 'MEMBER_SEX' => 0, 'MEMBER_PHONE' => '0', 'MEMBER_EMAIL' => $signupData["email"]]
-         ]);
-        
-
+        DB::table('member')->insert([
+            ['MEMBER_NAME' => $signupData["name"], 'MEMBER_PASSWORD' => $signupData["password"], 'MEMBER_ADDRESS' => $signupData["address"], 'MEMBER_EMAIL' => $signupData["email"]]
+        ]);
+        } catch (\Exception $e) {
+            report($e);
+            echo 'Connection failed: ' . $e->getMessage();
+        }
         return view('welcome');
     }
 
