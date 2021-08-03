@@ -42,8 +42,6 @@ class SignUpController extends Controller
      * @var Request $request
      */
     public function signupCreate(Request $request) {
-        $member = new Member;
-
         $name = $request->input('name');
         $email = $request->input('email');
         $password = $request->input('password');
@@ -57,7 +55,8 @@ class SignUpController extends Controller
              "address" => $address,
          );
          //Member::insert($signupData);
-        
+         var_dump($signupData);
+         exit;
         $this->signupDataInsert($signupData);
     }
 
