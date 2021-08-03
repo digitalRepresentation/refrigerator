@@ -19,10 +19,12 @@ Route::get('/', function () {
 });
 
 //ログイン画面
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/login', [LoginController::class, 'index']);
 
 //SignUp画面
 Route::get('/signup', [SignUpController::class, 'index']);
 
-//Auth::routes();
+//SignUp後の処理
+Route::post('/', [SignUpController::class, 'signupCreate'])->name('signup');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
