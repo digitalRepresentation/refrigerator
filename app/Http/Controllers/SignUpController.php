@@ -10,7 +10,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
-use App\Models\Member;
 
 
 class SignUpController extends Controller
@@ -54,10 +53,10 @@ class SignUpController extends Controller
              "password" => $password,
              "address" => $address,
          );
-         //Member::insert($signupData);
-         var_dump($signupData);
-         exit;
         $this->signupDataInsert($signupData);
+
+
+        return view('welcome');
     }
 
     /**
@@ -75,7 +74,7 @@ class SignUpController extends Controller
             report($e);
             echo 'Connection failed: ' . $e->getMessage();
         }
-        return view('welcome');
+        
     }
 
     // public function __construct()
