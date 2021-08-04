@@ -53,6 +53,9 @@ class SignUpController extends Controller
              "password" => $password,
              "address" => $address,
          );
+        
+        //$this->validator($signupData); 
+        // member DB insert処理
         $this->signupDataInsert($signupData);
 
 
@@ -68,7 +71,12 @@ class SignUpController extends Controller
         try {
         //memberテーブル作成
         DB::table('member')->insert([
-            ['MEMBER_NAME' => $signupData["name"], 'MEMBER_PASSWORD' => $signupData["password"], 'MEMBER_ADDRESS' => $signupData["address"], 'MEMBER_EMAIL' => $signupData["email"]]
+            [
+                'MEMBER_NAME' => $signupData["name"], 
+                'MEMBER_PASSWORD' => Hash::make($signupData["password"]), 
+                'MEMBER_ADDRESS' => $signupData["address"], 
+                'MEMBER_EMAIL' => $signupData["email"]
+            ]
         ]);
         } catch (\Exception $e) {
             report($e);
@@ -88,10 +96,10 @@ class SignUpController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    protected function validator(array $signupData)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+        return Validator::make($signupData, [
+            'MEMBER_NAME' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
