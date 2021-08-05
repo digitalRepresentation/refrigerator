@@ -54,8 +54,8 @@ class SignUpController extends Controller
              "address" => $address,
          );
         
-        //$this->validator($signupData); 
-        // member DB insert処理
+        $validatorCheck = $this->validator($signupData);
+        
         $this->signupDataInsert($signupData);
 
 
@@ -99,9 +99,10 @@ class SignUpController extends Controller
     protected function validator(array $signupData)
     {
         return Validator::make($signupData, [
-            'MEMBER_NAME' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'address' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
