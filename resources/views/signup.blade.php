@@ -27,18 +27,33 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputEmail4">Email</label>
-          <input type="email" class="form-control" value="{{ old('email') }}" id="inputEmail4" placeholder="Email">
+          <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" id="email" autocomplete="email"  placeholder="Email">
+          @error('email')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }} </strong>
+                  </span>
+          @enderror
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">パスワード</label>
-          <input type="password" class="form-control" value="{{ old('password') }}" id="inputPassword4" placeholder="Password">
+          <input type="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" id="password" autocomplete="password" name="password" placeholder="Password">
+          @error('password')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }} </strong>
+                  </span>
+          @enderror
         </div>
       </div>
       <div class="form-group">
         <label for="inputAddress">住所</label>
-        <input type="text" class="form-control" value="{{ old('address') }}"   id="inputAddress" placeholder="1234 Main St">
+        <input type="text" class="form-control @error('address') is-invalid @enderror" value="{{ old('address') }}" name="address" id="inputAddress" placeholder="1234 Main St">
+        @error('address')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }} </strong>
+                  </span>
+        @enderror
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="inputAddress2">Address 2</label>
         <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
       </div>
@@ -58,7 +73,7 @@
           <label for="inputZip">Zip</label>
           <input type="text" class="form-control" id="inputZip">
         </div>
-      </div>
+      </div> -->
       <div class="form-group">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="gridCheck">

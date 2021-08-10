@@ -46,9 +46,10 @@ class SignUpController extends Controller
         $this->validate($request, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'address' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
+            'address' => ['required', 'string', 'min:4', 'max:100'],
         ]);
+
 
         $name = $request->input('name');
         $email = $request->input('email');
@@ -63,36 +64,34 @@ class SignUpController extends Controller
             "address" => $address,
          );
         
-        $validatorCheck = $this->validator($signupData);
-        
         $this->signupDataInsert($signupData);
 
 
         return view('welcome');
     }
 
-    // /**
-    //  * data insert処理
-    //  *
-    //  * @var array $signupData
-    //  */
-    // public function signupDataInsert(array $signupData) {
-    //     try {
-    //     //memberテーブル作成
-    //     DB::table('member')->insert([
-    //         [
-    //             'MEMBER_NAME' => $signupData["name"], 
-    //             'MEMBER_PASSWORD' => Hash::make($signupData["password"]), 
-    //             'MEMBER_ADDRESS' => $signupData["address"], 
-    //             'MEMBER_EMAIL' => $signupData["email"]
-    //         ]
-    //     ]);
-    //     } catch (\Exception $e) {
-    //         report($e);
-    //         echo 'Connection failed: ' . $e->getMessage();
-    //     }
+    /**
+     * data insert処理
+     *
+     * @var array $signupData
+     */
+    public function signupDataInsert(array $signupData) {
+        try {
+        //memberテーブル作成
+        DB::table('member')->insert([
+            [
+                'MEMBER_NAME' => $signupData["name"], 
+                'MEMBER_PASSWORD' => Hash::make($signupData["password"]), 
+                'MEMBER_ADDRESS' => $signupData["address"], 
+                'MEMBER_EMAIL' => $signupData["email"]
+            ]
+        ]);
+        } catch (\Exception $e) {
+            report($e);
+            echo 'Connection failed: ' . $e->getMessage();
+        }
         
-    // }
+    }
 
     // // public function __construct()
     // // {
