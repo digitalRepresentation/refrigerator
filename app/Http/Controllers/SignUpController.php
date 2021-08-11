@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
-
+use Member;
 
 class SignUpController extends Controller
 {
@@ -64,8 +64,9 @@ class SignUpController extends Controller
             "address" => $address,
          );
         
-        $this->signupDataInsert($signupData);
-
+        $message = $this->signupDataInsert($signupData);
+         var_dump($message);
+         exit;
 
         return view('welcome');
     }
