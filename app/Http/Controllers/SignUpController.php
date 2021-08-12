@@ -44,7 +44,7 @@ class SignUpController extends Controller
 
         //Validation Check
         $this->validate($request, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8'],
             'address' => ['required', 'string', 'min:4', 'max:100'],
