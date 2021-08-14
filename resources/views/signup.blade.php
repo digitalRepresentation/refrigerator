@@ -34,6 +34,9 @@
                   </span>
           @enderror
         </div>
+      </div>
+
+      <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputPassword4">パスワード</label>
           <input type="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" id="password" autocomplete="password" name="password" placeholder="Password">
@@ -44,6 +47,9 @@
           @enderror
         </div>
       </div>
+      
+
+
       <div class="form-group">
         <label for="inputAddress">住所</label>
         <input type="text" class="form-control @error('address') is-invalid @enderror" value="{{ old('address') }}" name="address" id="inputAddress" placeholder="1234 Main St">
