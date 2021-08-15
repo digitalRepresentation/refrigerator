@@ -38,7 +38,7 @@
 
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputPassword4">パスワード</label>
+          <label for="inputPassword4">パスワード確認</label>
           <input type="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" id="password" autocomplete="password" name="password" placeholder="Password">
           @error('password')
                   <span class="invalid-feedback" role="alert">
@@ -48,6 +48,17 @@
         </div>
       </div>
       
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">パスワード</label>
+          <input type="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" id="password" autocomplete="password" name="password" placeholder="Password">
+          @error('password')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }} </strong>
+                  </span>
+          @enderror
+        </div>
+      </div>
 
 
       <div class="form-group">
