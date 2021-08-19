@@ -50,13 +50,18 @@ class SignUpController extends Controller
             'address' => ['required', 'string', 'min:4', 'max:100'],
         ]);
 
+        
 
         $name = $request->input('name');
         $email = $request->input('email');
         $password = $request->input('password');
         $address = $request->input('address');
         
-        
+        //重複されるidがあるのか確認
+        $memberNameCheck = DB::table('member')->where('MEMBER_NAME', $name)->value('MEMBER_NAME');
+
+        //重複idがない場合
+        if(!isset($memberNameCheck)){
         $signupData = array(
             "name" => $name,
             "email" => $email,
@@ -64,11 +69,18 @@ class SignUpController extends Controller
             "address" => $address,
          );
         
-        $message = $this->signupDataInsert($signupData);
-         var_dump($message);
-         exit;
+        $this->signupDataInsert($signupData);
+        
 
+        
         return view('welcome');
+        }
+        
+        
+
+        //重複idがない場合
+        return back()->withInput()->with('error', '入力エラーがあります');
+
     }
 
     /**
