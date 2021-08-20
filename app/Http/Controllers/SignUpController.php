@@ -76,11 +76,9 @@ class SignUpController extends Controller
         
         return view('welcome');
         }
-        
-        
 
         //重複idがない場合
-        return back()->withInput()->with('error', '入力エラーがあります');
+        return back()->withInput()->with('error', 'idが重複されています。');
 
     }
 
