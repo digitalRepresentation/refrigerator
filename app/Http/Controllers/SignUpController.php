@@ -41,6 +41,8 @@ class SignUpController extends Controller
      * @var Request $request
      */
     public function signupCreate(Request $request) {
+        
+        session_start();
 
         //Validation Check
         $this->validate($request, [
@@ -70,7 +72,6 @@ class SignUpController extends Controller
          );
         
         $this->signupDataInsert($signupData);
-        
 
         
         return view('welcome');
