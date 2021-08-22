@@ -6,7 +6,8 @@
 @endsection
 
 @section('content')
-    <form class="loginForm">
+    <form class="loginForm" method="POST" action="{{ route('login.custom') }}">
+    @csrf
     {{ __('Login') }}
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -14,10 +15,20 @@
             </div>
             <div class="panel-title">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="ID">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" name="name" placeholder="ID" required autocomplete="off" autofocus>
+                    @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }} </strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="パスワード">
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" name="password" placeholder="パスワード">
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }} </strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="checkbox">
                     <label>
