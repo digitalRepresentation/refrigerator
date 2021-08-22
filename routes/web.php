@@ -28,3 +28,6 @@ Route::get('/signup', [SignUpController::class, 'index']);
 Route::post('/', [SignUpController::class, 'signupCreate'])->name('signup');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//loginする時の処理
+Route::post('custom-login', [LoginController::class, 'customLogin'])->name('login.custom');
