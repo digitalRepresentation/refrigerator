@@ -22,8 +22,11 @@ class Member extends Model
 
     protected $fillable = [
         'MEMBER_NAME',
-        'MEMBER_EMAIL',
         'MEMBER_PASSWORD',
-        'MEMBER_ADDRESS' 
+        'MEMBER_ADDRESS',
+        'MEMBER_SEX',
+        'MEMBER_PHONE',
+        'MEMBER_EMAIL' 
     ];
+    
 }
