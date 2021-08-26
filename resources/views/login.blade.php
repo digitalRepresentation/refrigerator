@@ -23,7 +23,7 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" name="password" placeholder="パスワード">
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" name="password" id="password" autocomplete="password" placeholder="パスワード">
                     @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }} </strong>
@@ -35,7 +35,13 @@
                         <input type="checkbox"> 入力情報を記憶します。
                     </label>
                 </div>
+                @if(session('success'))
+                <p class="" style="color:red;" role="alert">
+                    <strong>{{session('success')}}</strong>
+                </p>
+                @endif
                 <button type="submit" class="btn btn-success">ログイン</button>
+                    
                 <hr>
             </div>
         </div>
