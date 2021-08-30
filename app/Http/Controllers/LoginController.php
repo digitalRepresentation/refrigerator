@@ -53,7 +53,7 @@ class LoginController extends Controller
 
         //idがあるかつ、DB上のidとpasswordが一致する場合
         if(isset($loginPassword) && hash::check($password, $loginPassword)){
-            $request->session()->put('user',$name);
+            session()->put('user',$name);
             return redirect('/');
         }
         //失敗した場合
