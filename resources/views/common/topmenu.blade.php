@@ -22,6 +22,7 @@
 <body>
     <header>
             <div class="login">
+                <p>ようこそ！　{{ Session::get('user') }} 様</p>
                 <a href="/login">login</a>
             </div>
             <!-- menu -->
