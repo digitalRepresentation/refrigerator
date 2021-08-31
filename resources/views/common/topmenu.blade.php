@@ -21,10 +21,15 @@
 </head>
 <body>
     <header>
-            <div class="login">
-                <p>ようこそ！　{{ Session::get('user') }} 様</p>
-                <a href="/login">login</a>
-            </div>
+        <div class="login">
+            @if(session('user'))
+                <p>ようこそ！　{{ Session('user') }} 様 <a href="/logout">logout</a></p>
+                
+            @else
+            <a href="/login">login</a>
+            @endif
+        </div>
+            
             <!-- menu -->
             <div class="topnav">
                 <a class="active" href="/">Home</a>
