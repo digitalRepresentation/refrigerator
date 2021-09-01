@@ -21,6 +21,9 @@ Route::get('/', function () {
 //ログイン画面
 Route::get('/login', [LoginController::class, 'index']);
 
+//ログアウト処理
+Route::get('/logout', [LoginController::class, 'logout']);
+
 //SignUp画面
 Route::get('/signup', [SignUpController::class, 'index']);
 
