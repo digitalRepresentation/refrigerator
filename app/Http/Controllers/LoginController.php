@@ -14,7 +14,7 @@ class LoginController extends Controller
         return view('login');
     }
 
-        /**
+    /**
      * SignUpの引数を取得するメソッド
      *
      * @var Request $request
@@ -51,4 +51,20 @@ class LoginController extends Controller
             dd($e);    
         }
     }
+
+    /**
+     * logout処理
+     *
+     * @var Request $request
+     */
+    public function logout(Request $request) {
+        try{  
+        //
+        $request->session()->flush();
+        return redirect('/');
+        }catch(Exception $e){    
+            dd($e);    
+        }
+    }
+
 }
