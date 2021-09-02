@@ -29,23 +29,12 @@ class LoginController extends Controller
         //password値
         $password = $request->input('password');
         
-        //refeactoring1
-        //$request -> only('name', 'password');
-
         //Validation Check
         $this->validate($request, [
             'name' => ['required'],
             'password' => ['required'],
         ]);
         
-
-
-        //refeactoring2
-        //$request -> validate($request -> only('name', 'password'), [벨리데이터배열]);
-        //$request -> validate($request -> only('name', 'password'), [
-            // 'name' => ['required'],
-            // 'password' => ['required'],
-            // ]);
 
         //loginするIDのパスワード確認
         $loginPassword = DB::table('member')->where('MEMBER_NAME', $name)->value('MEMBER_PASSWORD');
