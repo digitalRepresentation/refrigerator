@@ -28,5 +28,16 @@ class Member extends Model
         'MEMBER_PHONE',
         'MEMBER_EMAIL' 
     ];
+
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
+
+
+    protected $hidden = [
+        'MEMBER_PASSWORD',
+        'remember_token',
+        'MEMBER_NAME',
+    ];
     
 }
